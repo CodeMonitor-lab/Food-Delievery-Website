@@ -13,6 +13,7 @@ import {
   BeacameAPartner,
   TermsOFService,
   Catagory,
+  PageNotFound,
 } from "../pages/index";
 
 const AppRoute = () => {
@@ -64,6 +65,10 @@ const AppRoute = () => {
         {
           path: "/Supports",
           element: <Support />,
+        },
+        {
+          path: "*",
+          element: <PageNotFound/>,
         },
       ],
     },
