@@ -1,18 +1,17 @@
 {
-    "routes": [
-      { "src": "/", "dest": "/" },
-      { "src": "/Dishes", "dest": "/" },
-      { "src": "/Orders", "dest": "/" },
-      { "src": "/Offers", "dest": "/" },
-      { "src": "/NearByEats", "dest": "/" },
-      { "src": "/Cart", "dest": "/" },
-      { "src": "/Register", "dest": "/" },
-      { "src": "/Supports", "dest": "/" },
-      { "src": "/About", "dest": "/" },
-      { "src": "/Catagory", "dest": "/" },
-      { "src": "/Beacame-A-Partner", "dest": "/" },
-      { "src": "/Terms-of-service", "dest": "/" },
-      { "src": "/(.*)", "dest": "/" }
+    "rewrites": [
+      { "source": "/Dishes", "destination": "/" },
+      { "source": "/Orders", "destination": "/" },
+      { "source": "/Offers", "destination": "/" },
+      { "source": "/NearByEats", "destination": "/" },
+      { "source": "/Cart", "destination": "/" },
+      { "source": "/Register", "destination": "/" },
+      { "source": "/Supports", "destination": "/" },
+      { "source": "/About", "destination": "/" },
+      { "source": "/Catagory", "destination": "/" },
+      { "source": "/Beacame-A-Partner", "destination": "/" },
+      { "source": "/Terms-of-service", "destination": "/" },
+      { "source": "/(.*)", "destination": "/" }
     ]
   }
   
