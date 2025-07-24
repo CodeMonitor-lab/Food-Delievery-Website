@@ -1,0 +1,21 @@
+{
+    "routes":[
+        {
+            "src":"/",
+            "dest":"/"
+        },
+        {
+            "src":"/Dishes",
+            "dest":"/"
+        },
+        {
+            "src":"/Orders",
+            "dest":"/"
+        },
+        {
+            "src":"/Offers",
+            "dest":"/"
+        }
+        
+    ]
+}
