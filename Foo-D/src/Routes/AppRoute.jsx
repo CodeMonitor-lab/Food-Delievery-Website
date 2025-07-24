@@ -39,7 +39,7 @@ const AppRoute = () => {
           element: <Orders />,
         },
         {
-          path: "/Carts",
+          path: "/Cart",
           element: <Cart />,
         },
         {

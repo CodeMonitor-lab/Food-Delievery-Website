@@ -15,7 +15,48 @@
         {
             "src":"/Offers",
             "dest":"/"
+        },
+        {
+            "src":"/NearByEats",
+            "dest":"/"
+        },
+        {
+            "src":"/Cart",
+            "dest":"/"
+        },
+        {
+            "src":"/Register",
+            "dest":"/"
+        },
+        {
+            "src":"/Supports",
+            "dest":"/"
+        },
+        {
+            "src":"/About",
+            "dest":"/"
+        },
+        {
+            "src":"/Catagory",
+            "dest":"/"
+        },
+        {
+            "src":"/Offers",
+            "dest":"/"
+        },
+        {
+          "src":"/Beacame-A-Partner",
+            "dest":"/"
+        },
+        {
+            "src":"/Terms-of-service",
+            "dest":"/"
+        },
+        {
+            "src":"*",
+            "dest":"/"
         }
+        
         
     ]
 }

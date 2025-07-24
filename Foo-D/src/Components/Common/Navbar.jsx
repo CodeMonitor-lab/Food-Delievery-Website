@@ -7,7 +7,8 @@ const Navbar = () => {
     { to: "/Dishes", label: "Dishes" },
     { to: "/Offers", label: "Offers" },
     { to: "/Orders", label: "Orders" },
-    { to: "/", label: "NearbyEats" },
+    { to: "/NearByEats", label: "NearbyEats" },
+    { to: "/Cart", label: "Cart" },
     { to: "/Register", label: "Register" },
   ];
 
