@@ -14,6 +14,7 @@ import {
   TermsOFService,
   Catagory,
   PageNotFound,
+  NearByEats,
 } from "../pages/index";
 
 const AppRoute = () => {
@@ -41,6 +42,10 @@ const AppRoute = () => {
         {
           path: "/Cart",
           element: <Cart />,
+        },
+        {
+          path: "/NearByEats",
+          element: <NearByEats/>,
         },
         {
           path: "/Register",

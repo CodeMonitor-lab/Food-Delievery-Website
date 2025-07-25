@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { FaBurger } from "react-icons/fa6";
 
-const ToggleHamMenu = () => {
+const ToggleHamMenu = ({ onClick }) => {
   return (
-    <div>ToggleHamMenu</div>
-  )
-}
+    <button
+      onClick={onClick}
+      className="shadow cursor-pointer border border-amber-700 rounded p-2"
+    >
+      <FaBurger className="text-amber-600" size={24} />
+    </button>
+  );
+};
 
-export default ToggleHamMenu
+export default ToggleHamMenu;

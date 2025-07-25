@@ -1,8 +1,13 @@
 import React from 'react'
+import {RegisterBtn} from '../Components/index'
 
 const Register = () => {
   return (
-    <div>Register</div>
+    <main>
+      <section>
+        <RegisterBtn/>
+      </section>
+    </main>
   )
 }
 

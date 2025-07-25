@@ -24,7 +24,9 @@ export { default as Ratings } from "./Common/Ratings";
 export { default as SortBy } from "./Common/SortBy";
 export { default as Filters } from "./Common/Filters";
 export { default as Navbar } from "./Common/Navbar";
+export { default as RegisterBtn } from "./Common/RegisterBtn";
 export { default as ToggleHamMenu } from "./Common/ToggleHamMenu";
+export { default as HederSideMenu } from "./Common/HederSideMenu";
 
 // UI
 export { default as CartBanner } from "./UI/CartBanner";

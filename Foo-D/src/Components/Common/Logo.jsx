@@ -1,11 +1,13 @@
 import React from "react";
 import { RiNextjsFill } from "react-icons/ri";
+import {sandwich} from '../../assets/icons.js'
+
 
 const Logo = () => {
   return (
-    <div className="flex items-center gap-2">
-      <RiNextjsFill className="text-2xl text-indigo-600" />
-      <h1 className="text-xl font-bold">Logo</h1>
+    <div>
+      {/* <img className="w-11 shadow-2xl" src={sandwich} alt="" /> */}
+      <h1 className="text-3xl font-serif font-bold text-amber-600" >TeastyBite</h1>
     </div>
   );
 };
