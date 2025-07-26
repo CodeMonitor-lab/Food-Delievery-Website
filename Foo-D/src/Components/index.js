@@ -26,7 +26,9 @@ export { default as Filters } from "./Common/Filters";
 export { default as Navbar } from "./Common/Navbar";
 export { default as RegisterBtn } from "./Common/RegisterBtn";
 export { default as ToggleHamMenu } from "./Common/ToggleHamMenu";
-export { default as HederSideMenu } from "./Common/HederSideMenu";
+export { default as HeaderSideMenu } from "./Common/HeaderSideMenu";
+export { default as ActiveLink } from "./Common/ActiveLink";
+
 
 // UI
 export { default as CartBanner } from "./UI/CartBanner";

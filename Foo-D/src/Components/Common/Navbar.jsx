@@ -1,39 +1,73 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import ActiveLink from './ActiveLink';
+import HeaderLinks from '../../data/HeaderLinks.json';
+
+// ICON IMPORTS
 import { RiAdminFill } from "react-icons/ri";
 import { BsCart4 } from "react-icons/bs";
 import { PiMapPinAreaFill } from "react-icons/pi";
+import { TbRosetteDiscountFilled } from "react-icons/tb";
+import { FaBowlRice } from "react-icons/fa6";
+import { GiFoodTruck } from "react-icons/gi";
+import { SiHomepage } from "react-icons/si";
+
+// Icon map
+const iconMap = {
+  PiMapPinAreaFill,
+  BsCart4,
+  RiAdminFill,
+  TbRosetteDiscountFilled,
+  FaBowlRice,
+  GiFoodTruck,
+  SiHomepage
+};
+
+// Hook to detect screen size
+const useScreenSize = () => {
+  const [screenSize, setScreenSize] = useState(getSizeCategory());
+
+  function getSizeCategory() {
+    const width = window.innerWidth;
+    if (width < 480) return "extraSmallScreen";
+    if (width < 640) return "smallScreen";
+    if (width < 768) return "mediumScreen";
+    if (width < 1024) return "largeScreen";
+    return "largeScreen"; // fallback if no largeScreen exists
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(getSizeCategory());
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return screenSize;
+};
 
 const Navbar = () => {
-  const NavbarLink = [
-    { to: "/", label: "Home" },
-    { to: "/Dishes", label: "Dishes" },
-    { to: "/Offers", label: "Offers" },
-    // { to: "/Orders", label: "Orders" },
-    { to: "/NearByEats", label: "Search..", icon: <PiMapPinAreaFill size={24} /> },
-    { to: "/Cart", label: "|", icon: <BsCart4 size={20} /> },
-    { to: "/Register", label: "login", icon: <RiAdminFill size={20} /> },
-  ];
+  const screenSize = useScreenSize(); // "smallScreen" | "mediumScreen"
+  const links = HeaderLinks[screenSize] || [];
 
   return (
     <main>
-      <nav>
+      <nav aria-label="Main Navigation">
         <ul className="flex gap-6 text-xl items-center">
-          {NavbarLink.map((link, index) => (
-            <li key={index}>
-              <NavLink
-                to={link.to}
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-amber-800 flex items-center gap-1"
-                    : "text-black hover:text-amber-800 transition flex items-center gap-1"
-                }
-              >
-                {link.icon && <span className="text-md sm:text-xs ">{link.icon}</span>}
-                <span>{link.label}</span>
-              </NavLink>
-            </li>
-          ))}
+          {links.map((link, index) => {
+            const Icon = iconMap[link.icon]; // Will be undefined for mediumScreen
+            return (
+              <li key={index}>
+                <ActiveLink to={link.to}>
+                  <div className="flex items-center gap-1">
+                    {Icon && <Icon className="text-md" />}
+                    <span className="text-xl" >{link.label}</span>
+                  </div>
+                </ActiveLink>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </main>

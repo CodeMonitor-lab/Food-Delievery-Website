@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { Navbar, Logo, ToggleHamMenu,HederSideMenu } from "../index";
+import { Navbar, Logo, ToggleHamMenu, HeaderSideMenu } from "../index";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -8,6 +8,7 @@ const Header = () => {
   const location = useLocation();
   const lastScrollY = useRef(window.scrollY);
 
+  // Hide header on scroll down, show on scroll up
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -23,10 +24,15 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Reset header and close mobile menu on route change
   useEffect(() => {
     setIsVisible(true);
-    setIsMobileMenuOpen(false); // close mobile menu on route change
+    setIsMobileMenuOpen(false);
   }, [location.pathname]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
 
   return (
     <>
@@ -35,19 +41,19 @@ const Header = () => {
           isVisible ? "translate-y-0" : "-translate-y-full"
         } bg-white backdrop-blur-md`}
       >
-        <div className="flex items-center gap-4 justify-between px-6 py-3 max-w-7xl mx-auto">
+        <section className="flex items-center justify-around py-3 px-4 md:px-8">
           <Logo />
-          <div className="hidden md:flex">
+          <div>
             <Navbar />
           </div>
-          <div className="md:hidden">
-            <ToggleHamMenu onClick={() => setIsMobileMenuOpen(true)} />
+          <div className="sm:block">
+            <ToggleHamMenu onClick={toggleMobileMenu} />
           </div>
-        </div>
+        </section>
       </header>
 
-      {/* Side Menu for Mobile */}
-      <HederSideMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+      {/* Mobile Side Menu */}
+      <HeaderSideMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </>
   );
 };

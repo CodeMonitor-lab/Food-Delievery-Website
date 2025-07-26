@@ -1,0 +1,31 @@
+{
+  "extraSmallScreen": [
+    { "to": "/Dishes", "label": "Dishes" },
+    { "to": "/Offers", "label": "Offers" },
+    { "to": "/NearByEats", "label": "","icon":"PiMapPinAreaFill" }
+  ],
+  "smallScreen": [
+    { "to": "/Cart", "label": "Dishes","icon":"BsCart4" },
+    { "to": "/NearByEats", "label": "Search..","icon":"PiMapPinAreaFill" },
+    { "to": "/Offers", "label": "Offers" }
+  ],
+
+  "mediumScreen": [
+    { "to": "/Dishes", "label": "Dishes" },
+    { "to": "/Offers", "label": "Offers" },
+    { "to": "/NearByEats", "label": "Search..","icon":"PiMapPinAreaFill" },
+    { "to": "/Cart", "label": "Cart","icon":"BsCart4" },
+    { "to": "/Register", "label": "Login","icon":"RiAdminFill" }
+  ],
+  "largeScreen": [
+    { "to": "/", "label": "Home" },
+    { "to": "/Dishes", "label": "Dishes" },
+    { "to": "/Offers", "label": "Offers" },
+    { "to": "/Orders", "label": "Orders" },
+    { "to": "/NearByEats", "label": "Search...","icon":"PiMapPinAreaFill" },
+    { "to": "/Cart", "label": "Cart","icon":"BsCart4" },
+    { "to": "/Register", "label": "Login","icon":"RiAdminFill" }
+  ]
+        
+}
+  
