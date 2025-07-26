@@ -1,0 +1,34 @@
+{
+    "extraSmallScreen": [
+      { "to": "/NearByEats", "label": "Taste local...","icon":"PiMapPinAreaFill" },
+      { "to": "/", "label": "Home","icon":"SiHomepage"},
+      { "to": "/Cart", "label": "Cart","icon":"BsCart4" },
+      { "to": "/Orders", "label": "Your Order","icon":"GiFoodTruck"},
+      { "to": "/Review", "label": "Your Review","icon":"GiKnockedOutStars" },
+      { "to": "/Support", "label": "Support","icon":"MdMarkUnreadChatAlt"},
+      { "to": "/Register", "label": "Login","icon":"RiAdminFill" }
+    ],
+    "smallScreen": [
+      { "to": "/", "label": "Home","icon":"SiHomepage"},
+      { "to": "/NearByEats", "label": "Taste local...","icon":"PiMapPinAreaFill" },
+      { "to": "/Review", "label": "Your Review","icon":"GiKnockedOutStars" },
+      { "to": "/Orders", "label": "Your Order","icon":"GiFoodTruck"},
+      { "to": "/Support", "label": "Support","icon":"MdMarkUnreadChatAlt" },
+      { "to": "/Register", "label": "Login","icon":"RiAdminFill" }
+    ],
+    "mediumScreen": [
+      { "to": "/", "label": "Home","icon":"SiHomepage"},
+        { "to": "/NearByEats", "label": "Taste local...","icon":"PiMapPinAreaFill" },
+        { "to": "/Orders", "label": "Your Order","icon":"GiFoodTruck"},
+        { "to": "/Review", "label": "Your Review","icon":"GiKnockedOutStars" },
+        { "to": "/Support", "label": "Support","icon":"MdMarkUnreadChatAlt" }
+      ],
+    "largeScreen": [
+      { "to": "/NearByEats", "label": "Taste locale...","icon":"PiMapPinAreaFill" },
+      { "to": "/Orders", "label": "Your Order","icon":"GiFoodTruck"},
+      { "to": "/Review", "label": "Your Review","icon":"GiKnockedOutStars" },
+      { "to": "/Support", "label": "Support","icon":"MdMarkUnreadChatAlt" }
+    ]    
+          
+  }
+    

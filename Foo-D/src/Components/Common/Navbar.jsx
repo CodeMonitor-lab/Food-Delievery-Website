@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ActiveLink from './ActiveLink';
 import HeaderLinks from '../../data/HeaderLinks.json';
+import {useScreenSize} from "../../hooks/useScreenSize";
 
 // ICON IMPORTS
 import { RiAdminFill } from "react-icons/ri";
@@ -22,48 +23,21 @@ const iconMap = {
   SiHomepage
 };
 
-// Hook to detect screen size
-const useScreenSize = () => {
-  const [screenSize, setScreenSize] = useState(getSizeCategory());
-
-  function getSizeCategory() {
-    const width = window.innerWidth;
-    if (width < 480) return "extraSmallScreen";
-    if (width < 640) return "smallScreen";
-    if (width < 768) return "mediumScreen";
-    if (width < 1024) return "largeScreen";
-    return "largeScreen"; // fallback if no largeScreen exists
-  }
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenSize(getSizeCategory());
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return screenSize;
-};
-
 const Navbar = () => {
-  const screenSize = useScreenSize(); // "smallScreen" | "mediumScreen"
-  const links = HeaderLinks[screenSize] || [];
+  const screenSize = useScreenSize();
+  const links = HeaderLinks[screenSize] || HeaderLinks["smallScreen"];
 
   return (
-    <main>
-      <nav aria-label="Main Navigation">
-        <ul className="flex gap-6 text-xl items-center">
+    <main className="w-full px-4 py-2">
+      <nav aria-label="Primary site navigation">
+        <ul className="flex gap-6 sm:gap-6 items-center">
           {links.map((link, index) => {
-            const Icon = iconMap[link.icon]; // Will be undefined for mediumScreen
+            const Icon = iconMap[link.icon];
             return (
               <li key={index}>
-                <ActiveLink to={link.to}>
-                  <div className="flex items-center gap-1">
-                    {Icon && <Icon className="text-md" />}
-                    <span className="text-xl" >{link.label}</span>
-                  </div>
+                <ActiveLink to={link.to} className="flex items-center gap-1 text-xl">
+                  {Icon && <Icon className='text-xl' title={link.label} />}
+                  <span className="text-lg" >{link.label}</span>
                 </ActiveLink>
               </li>
             );
