@@ -1,5 +1,5 @@
 import React from "react";
-import {FaBurger} from 'react-icons/fa6'
+import { FaBurger } from "react-icons/fa6";
 
 const ToggleHamMenu = ({ onClick }) => {
   return (

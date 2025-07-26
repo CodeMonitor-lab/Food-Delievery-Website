@@ -21,10 +21,17 @@
     { "to": "/", "label": "Home" },
     { "to": "/Dishes", "label": "Dishes" },
     { "to": "/Offers", "label": "Offers" },
-    { "to": "/Orders", "label": "Orders" },
+    { "to": "/Orders", "label": "Orders"},
     { "to": "/NearByEats", "label": "Search...","icon":"PiMapPinAreaFill" },
     { "to": "/Cart", "label": "Cart","icon":"BsCart4" },
     { "to": "/Register", "label": "Login","icon":"RiAdminFill" }
+  ],
+  "ToggleSidebarLinks": [
+    { "to": "/NearByEats", "label": "Search...","icon":"PiMapPinAreaFill" },
+    { "to": "/Cart", "label": "Your Cart","icon":"BsCart4" },
+    { "to": "/Orders", "label": "Your Orders","icon":"TbTruckLoading" },
+    { "to": "/Support", "label": "Support","icon":"PiChatDotsFill" },
+    { "to": "/Register", "label": "Sign-up","icon":"RiAdminFill" }
   ]
         
 }
